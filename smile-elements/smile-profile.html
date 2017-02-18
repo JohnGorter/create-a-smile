@@ -1,0 +1,22 @@
+<dom-module id="smile-profile">
+    <template>
+        
+        <template is="dom-if" if="[[profile.name]]">
+            hallo {{profile.name}}
+        </template>
+        <template is="dom-if" if="[[!profile.name]]">
+            u moet eerst inloggen
+        </template>
+    </template>
+    <script>
+    Polymer({
+      is:'smile-profile',
+      properties:{
+          profile:{
+              type:Object, 
+              value:{}
+          }
+      }
+    })
+    </script>
+</dom-module>

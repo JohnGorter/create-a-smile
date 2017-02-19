@@ -1,0 +1,57 @@
+<dom-module id="smile-slider">
+    <template>
+        <style>
+            #title {
+                height:40px ;
+                background:#1f2726;
+                padding-top:10px; 
+                text-align:center;
+                line-height: 1.8;
+                letter-spacing: 3px; 
+                text-transform: uppercase;
+                color:whitesmoke;
+                font-family: 'Roboto', 'Noto', sans-serif;
+            }
+
+
+            #tabs {
+                background:#1f2726; 
+                color:#4d514f; 
+                --paper-tabs-selection-bar-color:#f56236 ;
+                --paper-tabs-selection-bar:10px;
+          
+            }
+
+
+        </style>
+        <div>
+            <div id="title" > statistieken </div>
+         
+            <paper-tabs selected="{{sel}}" id="tabs" noink autoselect-delay="1200">
+                <paper-tab>Ontvangen</paper-tab>
+                <paper-tab>Verzonden</paper-tab>
+                <paper-tab>Algemeen</paper-tab>
+            </paper-tabs>
+
+            <iron-pages class="flex" selected="{{sel}}">
+                <div>
+                    <first-page><div style="height:50%; background-color:#24bf7e;">Heey</div></first-page> 
+                </div>
+                
+                <div>
+                    <second-pagestyle><div style="height:50%; background-color:#2d7a99";>Hallo</div></second-page>
+                </div>
+                
+                <div>
+                    <third-pagestyle><div style="height:50%; background-color:#65cbab;">Hoi</div></third-page>
+                </div>
+            </iron-pages>
+
+        </div>
+    </template>
+    <script>
+    Polymer({
+      is:'smile-slider'
+    })
+    </script>
+</dom-module>

@@ -1,0 +1,43 @@
+<dom-module id="smile-stats-donut-chart">
+    <template>
+        <style>
+            #donut_single {
+
+                width: 300px; 
+                height: 300px;
+            
+            }
+    
+        </style>
+        <div>
+            <div id="donut_single"></div>
+        </div>
+    </template>
+    <script>
+    Polymer({
+      is:'smile-stats-donut-chart'
+    })
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Effort', 'Amount given'],
+          ['My all',     65],
+        ]);
+
+        var options = {
+          pieHole: 0.9,
+          pieSliceTextStyle: {
+            color: 'black',
+          },
+          legend: 'none'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
+        chart.draw(data, options);
+      }
+    </script>
+</dom-module>

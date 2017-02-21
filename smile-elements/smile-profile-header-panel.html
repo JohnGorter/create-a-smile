@@ -1,0 +1,100 @@
+<dom-module id="smile-profile-header-panel">
+    <template>
+        <style>
+            .container {
+                height: 45%;
+                width: 100%;
+                background: #007b8e;
+                color: whitesmoke;
+            }
+
+            .upper-box{
+                height:65%;
+                width:100%;
+                position: relative;
+            }
+
+ /* DIV achter de cirkel, welke gecentreerd is. 'Width' + 2x 'left' = 100% */ 
+            .pic-box {
+                height: 30%;
+                width: 36%;
+                position: absolute;
+                top: 15%;
+                left: 32%;
+            } 
+            
+            .pic-circle {
+                position: relative;
+                border-radius: 50%;
+                width: 100%;
+                height: auto;
+                padding-top: 100%;
+                background: whitesmoke;
+                background-image: url("/smile-images/monkey_smiling.jpg");
+                background-repeat: no-repeat;
+                background-size:105%;
+                background-position: top;
+                border-top: 3px solid whitesmoke;            
+                border-right: 5px solid whitesmoke;            
+                border-bottom: 8px solid whitesmoke;            
+                border-left: 4px solid whitesmoke;            
+            }    
+           
+           .lower-box {
+               height: 35%;
+               width: 100%;
+           }
+
+           .lower-inner-box {
+               height: 100%;
+               width: 60%;
+               position: relative;
+               left: 20%;
+           }
+
+           .name-area {
+               width:100%;
+               height: 40%;
+               --paper-input-container-color: white;
+               --paper-input-container-focus-color: white;
+               --paper-input-container-invalid-color: white;
+               --paper-input-container-input-color: white;
+               --paper-input-container-input: {font-size:50px; text-align: center;}
+           }
+
+
+           .summary-area {
+               width:100%;
+               height: 40%;
+               --paper-input-container-color: white;
+               --paper-input-container-focus-color: white;
+               --paper-input-container-invalid-color: white;
+               --paper-input-container-input-color: white;
+               --paper-input-container-input: {font-size:35px; text-align: center;};
+
+           }
+
+        </style>
+
+
+
+        <div class="container">
+            <div class="upper-box">
+                <div class="pic-box">
+                    <div class="pic-circle"> </div>    
+                </div>
+            </div>    
+            <div class="lower-box">    
+                <div class="lower-inner-box">
+                    <paper-input class="name-area" label="name" maxlength="25" no-label-float></paper-input>
+                    <paper-input class="summary-area" label="Summerize your life in 40 characters." no-label-float maxlength="40" size="50"></paper-input>               
+                </div>
+            </div>
+        </div>
+    </template>
+    <script>
+    Polymer({
+      is:'smile-profile-header-panel'
+    })
+    </script>
+</dom-module>

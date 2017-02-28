@@ -16,15 +16,20 @@
 
             #tabs {
                 background:#1f2726; 
-                color:#4d514f; 
+                color:#bec0bb; 
                 --paper-tabs-selection-bar-color:#f56236 ;
                 --paper-tabs-selection-bar:10px;
+                --paper-tabs: {font-size:20px; text-align: center; letter-spacing:3px; }
           
             }
 
+            .container {
+                height: 100%;
+                width: 100%;
+            }
 
         </style>
-        <div>
+        <div class='container'>
             <div id="title" > statistieken </div>
          
             <paper-tabs selected="{{sel}}" id="tabs" noink autoselect-delay="1200">
@@ -35,15 +40,15 @@
 
             <iron-pages class="flex" selected="{{sel}}">
                 <div>
-                    <first-page><div style="height:50%; background-color:#24bf7e;">Heey</div></first-page> 
+                    <first-page><div style="height:100%; background-color:#24bf7e;">Heey</div></first-page> 
                 </div>
                 
                 <div>
-                    <second-pagestyle><div style="height:50%; background-color:lightseagreen;">Hallo</div></second-page>
+                    <second-pagestyle><div style="height:100%; background-color:lightseagreen;">Hallo</div></second-page>
                 </div>
                 
                 <div>
-                    <third-pagestyle><div style="height:50%; background-color:#65cbab;">Hoi</div></third-page>
+                    <third-pagestyle><div style="height:100%; background-color:#65cbab;">Hoi</div></third-page>
                 </div>
             </iron-pages>
 

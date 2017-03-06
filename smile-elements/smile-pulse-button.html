@@ -1,0 +1,57 @@
+<dom-module id="smile-pulse-button">
+  <template>
+    <style>
+        paper-icon-button{
+          background: #e72669;
+          height: 184px;
+          width: 184px;
+          border-radius: 50%;
+          border: 3px solid white;
+          padding-top: 45px; 
+          padding-left:20px;
+          animation: pulse 3s infinite;
+          left:50%;
+        }
+
+        .pulse:hover {
+          animation: none;
+        }
+
+        @-webkit-keyframes pulse {
+          0% {
+           -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0.8);
+          }
+          70% {
+            -webkit-box-shadow: 0 0 0 100px rgba(255,255,255, 0);
+          }
+          100% {
+            -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+          }
+}
+        @keyframes pulse {
+          0% {
+            -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0.8);
+            box-shadow: 0 0 0 0 rgba(255,255,255, 0.4);
+          }
+          70% {
+            -moz-box-shadow: 0 0 0 100px rgba(255,255,255, 0);
+            box-shadow: 0 0 0 100px rgba(255,255,255, 0);
+          }
+          100% {
+            -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+            box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+  }
+  
+}
+    
+        </style>
+<div>
+  <paper-icon-button class="icon-smile" icon="custom:smile"></paper-icon-button>
+</div>
+</template>
+<script>
+  Polymer({
+    is: 'smile-pulse-button'
+  })
+</script>
+</dom-module>

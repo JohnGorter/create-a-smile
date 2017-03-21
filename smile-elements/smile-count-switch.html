@@ -1,21 +1,82 @@
 <dom-module id="smile-count-switch">
     <template>
         <style is="custom-style">
-  paper-toggle-button.green {
-    --paper-toggle-button-checked-bar-color:  var(--paper-green-500);
-    --paper-toggle-button-checked-button-color:  var(--paper-green-500);
-    --paper-toggle-button-checked-ink-color: var(--paper-green-500);
-    --paper-toggle-button-unchecked-bar-color:  var(--paper-teal-500);
-    --paper-toggle-button-unchecked-button-color:  var(--paper-teal-500);
-    --paper-toggle-button-unchecked-ink-color: var(--paper-teal-500);
-  }
 
+          .vulling{
+            height: 80px;
+            width: 2000px;
+          }
 
-    
+          .container {
+           background: transparent;
+           height: 50px;
+           width: 200px;
+         
+          }
+
+          .counter{
+            background: #fffffe;
+            border-radius: 10px;
+            height: 40%;
+            width: 70%;
+            float: left;
+            margin: 16px;
+        
+          }
+
+          .box1{
+            background: green;
+            height: 100%;
+            width: 25%;
+            float: left;
+            margin-left: 5% ;
+          }  
+
+         
+
+          .box2{
+            background: transparent;
+            height: 100%;
+            width: 40%;
+            float: left;
+          }
+
+          h1 {
+            font-family: roboto;
+            color: #24bf7e;
+            letter-spacing: 2px;
+            font-size: 14px;
+            padding: 0px;
+            margin-top: 2px;
+            text-align:  center;
+          }
+        
+          #add-button{
+            float: left;
+            padding:0px;
+            margin-left: 2px;
+            margin-top: -7%;
+          
+
+            --iron-icon-fill-color: #e72669 ;
+            --iron-icon-backgroun-color: white;
+            
+            
+            box-sizing: inherit;
+          }
+
         </style>
-        <div>
-          <paper-toggle-button class="green"></paper-toggle-button>
+          
+        <div class="vulling"></div>
+
+        <div class="container">
+          <div class="counter">
+            <div class="box1"></div>
+            <div class="box2"> <h1>100</h1></div>
+            <paper-icon-button id="add-button" icon="add-circle"></paper-icon-button>
+          </div>
         </div>
+
     </template>
     <script>
     Polymer({

@@ -1,16 +1,20 @@
 <dom-module id="smile-count-switch">
     <template>
-        <style is="custom-style">
+        <style>
+           
 
-          .vulling{
-            height: 80px;
-            width: 2000px;
+        #add-button{
+            float: left;
+            padding:0px;
+            margin-left: 2px;
+            margin-top: -15px;
+            box-sizing: inherit;
           }
 
+          
           .container {
-           background: transparent;
-           height: 50px;
-           width: 200px;
+           height:40px;
+           width: 400px;
          
           }
 
@@ -26,8 +30,6 @@
 
           .icon-smiles{
             float: left;
-            padding:0px;
-            margin-left: 0px;
             margin-top: -6%;
             height: 48px;
             width: 48px;
@@ -54,23 +56,19 @@
             float: left;
             padding:0px;
             margin-left: 2px;
-            margin-top: -7%;
+            margin-top: -15px;
           
-
-            --iron-icon-fill-color: #e72669 ;
-            --iron-icon-backgroun-color: white;
-            
             
             box-sizing: inherit;
           }
 
         </style>
           
-        <div class="vulling"></div>
+
 
         <div class="container">
           <div class="counter">
-            <paper-icon-button class="icon-smiles" icon="custom:smiles" ></paper-icon-button>
+            <paper-icon-button class="icon-smiles" icon="smile:smiles" ></paper-icon-button>
             <div class="box2"> <h1>100</h1></div>
             <paper-icon-button id="add-button" icon="add-circle"></paper-icon-button>
           </div>

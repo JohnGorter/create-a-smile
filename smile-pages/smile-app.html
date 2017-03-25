@@ -1,0 +1,58 @@
+
+    
+<!-- main entry point for the application !-->
+
+<dom-module id="smile-app">
+    <style include="smile-theme">
+        
+    </style>
+
+    <template>
+        <div class="layout vertical" style="height:100%">
+            <paper-toolbar>
+                <div class="flex">
+                    <smile-count-switch></smile-count-switch>
+                </div>
+                <paper-icon-button icon="smile:alarm"></paper-icon-button>
+            </paper-toolbar>
+
+            <iron-pages selected="{{selected}}" class="flex layout vertical">
+                <div>B</div>
+                <main-page></main-page>
+                <profile-page></profile-page>
+            </iron-pages>
+            
+            <paper-toolbar>
+                <paper-icon-button icon="smile:chat-bubble-outline" on-tap="gotoSocial"></paper-icon-button>
+                <div class="flex horizontal layout center-justified">
+                    <paper-fab hidden$="{{isMainpage(selected)}}" class="smile-button" icon="smile:smile" on-tap="gotoMainpage"></paper-fab>
+                </div>
+                <paper-icon-button icon="smile:face" on-tap="gotoProfile"></paper-icon-button>
+            </paper-toolbar>
+        <div>
+    </template>
+    <script>
+    Polymer({
+        is:'smile-app',
+        properties:{
+            selected:{
+                type:Number, 
+                value:1
+            }
+        },
+        gotoProfile(){
+            this.selected = 2;
+        },
+        gotoSocial(){
+            this.selected = 0;
+        },
+        gotoMainpage(){
+            this.selected = 1;
+        },
+        isMainpage(){
+            console.log('called');
+            return this.selected == 1;
+        }
+    })
+    </script>
+</dom-module>

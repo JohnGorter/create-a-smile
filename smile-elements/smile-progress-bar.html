@@ -1,0 +1,64 @@
+
+<dom-module id="smile-progress-bar">
+    <template>
+        <style>
+
+            h1 {
+                font-family: roboto;
+                color: white;
+                text-align: center;
+                text-transform:uppercase;
+                letter-spacing: 3px;
+                font-size: 40px;
+
+            }
+
+            .space {
+                height: 80px;
+            }
+
+            .card {
+                height: 60%;
+                width: 60%;
+                margin:auto;
+                background: lightblue;
+                border-radius: 10%;
+            }
+
+            .title{
+                height: 30%;
+                width: 100%;
+                align-items: baseline;
+              
+            }
+
+            .number{
+                height: 40%;
+                width: 100%;
+            }
+
+
+            .bar{
+                height: 30%;
+                width: 80%;
+                margin: auto;
+            }
+
+        </style>
+        <div>
+            <div class="space"></div>
+            <div class="card">
+                    <div class="title"> <h1> Recieved Compliments </h1></div>
+                    <div class="number"> <h1> 127 </h1> </div>
+                    <div class="bar">
+                        <paper-progress value="40" secondary-progress="80"></paper-progress>
+                    </div>
+            </div>
+        </div>
+    </template>
+    <script>
+    Polymer({
+      is:'smile-progress-bar'
+    })
+    </script>
+</dom-module>

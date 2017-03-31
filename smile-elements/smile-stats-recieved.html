@@ -1,5 +1,5 @@
 
-<dom-module id="smile-progress-bar">
+<dom-module id="smile-stats-recieved">
     <template>
         <style>
 
@@ -18,47 +18,70 @@
             }
 
             .card {
-                height: 60%;
+                height: 55%;
                 width: 60%;
                 margin:auto;
                 background: lightblue;
                 border-radius: 10%;
             }
 
+            .margin {
+                height: 40px;
+            }
+
             .title{
-                height: 30%;
+                height: 25%;
                 width: 100%;
                 align-items: baseline;
               
             }
 
             .number{
-                height: 40%;
+                height: 25%;
                 width: 100%;
             }
 
 
             .bar{
-                height: 30%;
+                height: 25%;
                 width: 80%;
                 margin: auto;
+            }
+
+            paper-progress {
+                --paper-progress-active-color: #e91e63;
+                --paper-progress-secondary-color: #f8bbd0;
+                --paper-progress-container-color: white;
+                --paper-progress-transition-duration: 0.9s;
+                --paper-progress-transition-transition-delay: 0,5s;
+                
+                --paper-progress-height: 20px;
+            
+            }
+
+            .paper-progress-0 {
+                width: 350px;
+                margin:auto;
+                border-radius: 15px;
+                border: solid #e91e63 2px;
             }
 
         </style>
         <div>
             <div class="space"></div>
             <div class="card">
+                    <div class="margin"></div>
                     <div class="title"> <h1> Recieved Compliments </h1></div>
                     <div class="number"> <h1> 127 </h1> </div>
                     <div class="bar">
-                        <paper-progress value="40" secondary-progress="80"></paper-progress>
+                        <paper-progress value="65" secondary-progress="80"></paper-progress>
                     </div>
             </div>
         </div>
     </template>
     <script>
     Polymer({
-      is:'smile-progress-bar'
+      is:'smile-stats-recieved'
     })
     </script>
 </dom-module>

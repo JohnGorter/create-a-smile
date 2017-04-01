@@ -1,0 +1,87 @@
+
+<dom-module id="smile-stats-sent">
+    <template>
+        <style>
+
+            h1 {
+                font-family: roboto;
+                color: white;
+                text-align: center;
+                text-transform:uppercase;
+                letter-spacing: 3px;
+                font-size: 40px;
+
+            }
+
+            .space {
+                height: 80px;
+            }
+
+            .card {
+                height: 55%;
+                width: 60%;
+                margin:auto;
+                background: lightblue;
+                border-radius: 10%;
+            }
+
+            .margin {
+                height: 40px;
+            }
+
+            .title{
+                height: 25%;
+                width: 100%;
+                align-items: baseline;
+              
+            }
+
+            .number{
+                height: 25%;
+                width: 100%;
+            }
+
+
+            .bar{
+                height: 25%;
+                width: 80%;
+                margin: auto;
+            }
+
+            paper-progress {
+                --paper-progress-active-color: cornflowerblue;
+                --paper-progress-secondary-color: skyblue;
+                --paper-progress-container-color: white;
+                --paper-progress-transition-duration: 0.9s;
+                --paper-progress-transition-transition-delay: 0,5s;
+                
+                --paper-progress-height: 20px;
+            
+            }
+
+            .paper-progress-1 {
+                width: 350px;
+                margin:auto;
+                border-radius: 15px;
+                border: solid cornflowerblue 2px;
+            }
+
+        </style>
+        <div>
+            <div class="space"></div>
+            <div class="card">
+                    <div class="margin"></div>
+                    <div class="title"> <h1> Sent Compliments </h1></div>
+                    <div class="number"> <h1> 236 </h1> </div>
+                    <div class="bar">
+                        <paper-progress value="65" secondary-progress="80"></paper-progress>
+                    </div>
+            </div>
+        </div>
+    </template>
+    <script>
+    Polymer({
+      is:'smile-stats-sent'
+    })
+    </script>
+</dom-module>

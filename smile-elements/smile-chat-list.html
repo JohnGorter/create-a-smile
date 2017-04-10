@@ -47,67 +47,181 @@
             font-size: 12px;
         }
 
+/* Swipe action */
+
+ swipe-action {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: default;
+    }
+
+    div[swipe-left-action],
+    div[swipe-right-action],
+    div[swipe-up-action],
+    div[swipe-down-action] {
+      color: white;
+      padding: 8px;
+      padding: 35px;
+      background-color: var(--paper-red-500);
+      @apply(--layout-horizontal);
+      @apply(--layout-center);
+    }
+
+    div[swipe-left-action] {
+      padding-right: 16px;
+      @apply(--layout-end-justified);
+    }
+
+    div[swipe-right-action] {
+      padding-left: 16px;
+       padding: 35px;
+      background-color: var(--paper-green-500);
+    }
+
+    div[swipe-left-action][swipe-right-action] {
+      @apply(--layout-center-center);
+    }
+
+    div[swipe-up-action] {
+      background-color: var(--paper-blue-500);
+      @apply(--layout-end);
+      @apply(--layout-center-justified);
+    }
+
+    div[swipe-down-action] {
+      background-color: var(--paper-grey-500);
+      @apply(--layout-start);
+      @apply(--layout-center-justified);
+    }
+
+
+    /* Simplest example */
+
+    swipe-action.simple-example {
+      width: 130px;
+      height: 130px;
+      padding: 8px;
+      @apply(--layout-self-center);
+    }
+
+    .simple-example-swipe-target {
+      background-color: white;
+      @apply(--layout-fit);
+      @apply(--layout-vertical);
+      @apply(--layout-center-center);
+    }
+
+
+    /* List example */
+
+    iron-list {
+      height: 400px;
+      max-width: 460px;
+      overflow-x: hidden !important;
+    }
+
+    swipe-action.list-item {
+      /* Items must be explicitely sized */ 
+      height: 72px;
+    }
+
+
+    /* Grid example */
+
+    #grid-example-container {
+      @apply(--layout-horizontal);
+      @apply(--layout-wrap);
+    }
+
+    swipe-action.square {
+      width: 130px;
+      height: 130px;
+      float: left;
+      margin: 4px;
+    }
+
+    swipe-action.square paper-material {
+      background-color: white;
+      @apply(--layout-fit);
+      @apply(--layout-vertical);
+      @apply(--layout-center-center);
+    }
+
         </style>
 <div>
     <paper-item class="first-item">
-            <div class="avatar"></div>
-              <paper-item-body two-line class="flex">
-                    <div class="name">Kim Jung Un</div>
-                    <div secondary class="compliment">I only recieve compliments...</div>
-              </paper-item-body>
-                <paper-item-body two-line class="list-indicator">
-                        <div class="new-message">1</div>
-                    <div class="time-indicator"> 21:35 </div>
-              </paper-item-body>
+        <div class="avatar"></div>
+        <paper-item-body two-line class="flex">
+            <div class="name">Kim Jung Un</div>
+            <div secondary class="compliment">I only recieve compliments...</div>
+        </paper-item-body>
+        <paper-item-body two-line class="list-indicator">
+            <div class="new-message">1</div>
+            <div class="time-indicator"> 21:35 </div>
+        </paper-item-body>
     </paper-item>
 
-        <paper-item class="second-item">
-            <div class="avatar"></div>
-              <paper-item-body two-line class="flex">
-                    <div class="name">Kim Jung Un</div>
-                    <div secondary class="compliment">I only recieve compliments...</div>
-              </paper-item-body>
-                <paper-item-body two-line class="list-indicator">
-                        <div class="new-message">1</div>
-                    <div class="time-indicator"> 21:35 </div>
-              </paper-item-body>
+    <paper-item class="second-item">
+        <div class="avatar"></div>
+        <paper-item-body two-line class="flex">
+            <div class="name">Kim Jung Un</div>
+            <div secondary class="compliment">I only recieve compliments...</div>
+        </paper-item-body>
+        <paper-item-body two-line class="list-indicator">
+            <div class="new-message">1</div>
+            <div class="time-indicator"> 21:35 </div>
+        </paper-item-body>
     </paper-item>
     <paper-item class="first-item">
-            <div class="avatar"></div>
-              <paper-item-body two-line class="flex">
-                    <div class="name">Kim Jung Un</div>
-                    <div secondary class="compliment">I only recieve compliments...</div>
-              </paper-item-body>
-                <paper-item-body two-line class="list-indicator">
-                        <div class="new-message">1</div>
-                    <div class="time-indicator"> 21:35 </div>
-              </paper-item-body>
+        <div class="avatar"></div>
+        <paper-item-body two-line class="flex">
+            <div class="name">Kim Jung Un</div>
+            <div secondary class="compliment">I only recieve compliments...</div>
+        </paper-item-body>
+        <paper-item-body two-line class="list-indicator">
+            <div class="new-message">1</div>
+            <div class="time-indicator"> 21:35 </div>
+        </paper-item-body>
     </paper-item>
 
-<swipe-action on-swiped-away="onSwipedAway" on-swipe-canceled="onSwipeCanceled">
-    <paper-item class="second-item">
+      <swipe-action on-swiped-away="onSwipedAwaySimplestExample" on-swipe-canceled="onSwipeCanceledSimplestExample">
+        <!-- Actual item to be swiped -->
+        <paper-item class="second-item">
             <div class="avatar"></div>
-              <paper-item-body two-line class="flex">
-                    <div class="name">Kim Jung Un</div>
-                    <div secondary class="compliment">I only recieve compliments...</div>
-              </paper-item-body>
-                <paper-item-body two-line class="list-indicator">
-                        <div class="new-message">1</div>
-                    <div class="time-indicator"> 21:35 </div>
-              </paper-item-body>
-    </paper-item>
+            <paper-item-body two-line class="flex">
+                <div class="name">Kim Jung Un</div>
+                <div secondary class="compliment">I only recieve compliments...</div>
+            </paper-item-body>
+            <paper-item-body two-line class="list-indicator">
+                <div class="new-message">1</div>
+                <div class="time-indicator"> 21:35 </div>
+            </paper-item-body>
+        </paper-item>
 
-  <div swipe-left-action swipe-right-action on-tap="onActionTaped">
-    <p>I am the underlay that will be display when the item will be swiped left or right</p>
-  </div>
-</swipe-action>
+        <!-- Swipe action for left and right swipes -->
+        <div id='horizontal-action-left' swipe-left-action swipe-size="100" swipe-rubber-band="50" on-tap="onActionTaped">
+          <iron-icon icon="delete"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>
 
+        <div id='horizontal-action-right' swipe-right-action swipe-size="100" swipe-rubber-band="50" on-tap="onActionTaped">
+          <iron-icon icon="undo"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>
+      </swipe-action>
+      </div>
+
+      
 </div>
 </template>
 <script>
     Polymer({
         is: 'smile-chat-list'
     })
+
+    
 </script>
 </script>
 </dom-module>

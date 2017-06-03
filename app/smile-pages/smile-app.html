@@ -16,11 +16,13 @@
                 <paper-icon-button icon="smile:alarm"></paper-icon-button>
             </paper-toolbar>
 
-            <iron-pages selected="{{selected}}" class="flex layout vertical">
-                <social-page>Hello World</social-page>
+<iron-swipeable-pages selected="{{selected}}" class="flex layout vertical" no-cycle>
+   <social-page>Hello World</social-page>
                 <main-page></main-page>
                 <profile-page></profile-page>
-            </iron-pages>
+</iron-swipeable-pages>
+
+          
             
             <paper-toolbar>
                 <paper-icon-button icon="smile:chat-bubble-outline" on-tap="gotoSocial"></paper-icon-button>

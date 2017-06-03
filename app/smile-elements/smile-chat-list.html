@@ -150,75 +150,51 @@
     }
 
         </style>
-<div>
-    <paper-item class="first-item">
-        <div class="avatar"></div>
-        <paper-item-body two-line class="flex">
-            <div class="name">Kim Jung Un</div>
-            <div secondary class="compliment">I only recieve compliments...</div>
-        </paper-item-body>
-        <paper-item-body two-line class="list-indicator">
-            <div class="new-message">1</div>
-            <div class="time-indicator"> 21:35 </div>
-        </paper-item-body>
-    </paper-item>
+        <div>
+            <template is="dom-repeat" items="[[items]]">
+                <swipe-action class="list-item" on-swiped-away="onSwipedAway" on-swipe-canceled="onSwipeCanceled">
+                    <paper-item class$="{{_getEvenOdd(item)}}">
+                        <div class="avatar"></div>
+                        <paper-item-body two-line class="flex">
+                            <div class="name">[[item.name]]</div>
+                            <div secondary class="compliment">[[item.message]]</div>
+                        </paper-item-body>
+                        <paper-item-body two-line class="list-indicator">
+                            <div class="new-message">1</div>
+                            <div class="time-indicator"> 21:35 </div>
+                        </paper-item-body>
+                    </paper-item>
+                    <!-- Swipe left action -->
+                    <div id="list-left-action" swipe-left-action swipe-size="100" swipe-rubber-band="40" on-tap="onActionTaped">
+                        <iron-icon icon="delete"></iron-icon>
+                        <paper-ripple></paper-ripple>
+                    </div>
 
-    <paper-item class="second-item">
-        <div class="avatar"></div>
-        <paper-item-body two-line class="flex">
-            <div class="name">Kim Jung Un</div>
-            <div secondary class="compliment">I only recieve compliments...</div>
-        </paper-item-body>
-        <paper-item-body two-line class="list-indicator">
-            <div class="new-message">1</div>
-            <div class="time-indicator"> 21:35 </div>
-        </paper-item-body>
-    </paper-item>
-    <paper-item class="first-item">
-        <div class="avatar"></div>
-        <paper-item-body two-line class="flex">
-            <div class="name">Kim Jung Un</div>
-            <div secondary class="compliment">I only recieve compliments...</div>
-        </paper-item-body>
-        <paper-item-body two-line class="list-indicator">
-            <div class="new-message">1</div>
-            <div class="time-indicator"> 21:35 </div>
-        </paper-item-body>
-    </paper-item>
-
-      <swipe-action on-swiped-away="onSwipedAwaySimplestExample" on-swipe-canceled="onSwipeCanceledSimplestExample">
-        <!-- Actual item to be swiped -->
-        <paper-item class="second-item">
-            <div class="avatar"></div>
-            <paper-item-body two-line class="flex">
-                <div class="name">Kim Jung Un</div>
-                <div secondary class="compliment">I only recieve compliments...</div>
-            </paper-item-body>
-            <paper-item-body two-line class="list-indicator">
-                <div class="new-message">1</div>
-                <div class="time-indicator"> 21:35 </div>
-            </paper-item-body>
-        </paper-item>
-
-        <!-- Swipe action for left and right swipes -->
-        <div id='horizontal-action-left' swipe-left-action swipe-size="100" swipe-rubber-band="50" on-tap="onActionTaped">
-          <iron-icon icon="delete"></iron-icon>
-          <paper-ripple></paper-ripple>
+                    <!-- Swipe right action -->
+                    <div id="list-right-action" swipe-right-action swipe-fade on-tap="onActionTaped">
+                    <iron-icon icon="archive"></iron-icon>
+                    <paper-ripple></paper-ripple>
+                    </div>
+                </swipe-action>
+            </template>
         </div>
-
-        <div id='horizontal-action-right' swipe-right-action swipe-size="100" swipe-rubber-band="50" on-tap="onActionTaped">
-          <iron-icon icon="undo"></iron-icon>
-          <paper-ripple></paper-ripple>
-        </div>
-      </swipe-action>
-      </div>
-
-      
-</div>
 </template>
 <script>
     Polymer({
-        is: 'smile-chat-list'
+        is: 'smile-chat-list',
+        properties:{
+            items:{
+                type:Array,
+                value:[
+                    { name:'john', message:'tekst hier'},
+                    { name:'jeroen', message:'tekst hier'},
+                    { name:'arjan', message:'tekst hier'}
+                ]
+            }
+        },
+        _getEvenOdd(a){
+            return this.items.indexOf(a) % 2 == 1 ? "second-item" : "first-item";
+        }
     })
 
     

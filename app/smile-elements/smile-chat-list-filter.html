@@ -1,0 +1,48 @@
+  <link rel="import" href="../paper-tabs.html">
+
+<dom-module id="smile-chat-list-filter">
+    <template>
+        <style>
+        .container {
+            min-height: 50px;
+        }
+
+        paper-tab {
+            --paper-tab-ink: var(--highlight-color);
+            --paper-tab: var(--dark-primary-color);
+            color: var(--text-primary-color);        
+            }
+        paper-tabs{
+            --paper-tabs-selection-bar-color: var(--highlight-color);
+            background: var(--dark-primary-color);
+        }
+        </style>
+        <div class="container">
+            <paper-tabs selected="{{selected}}" autoselect autoselect-delay="1000">
+                <paper-tab on-tap="smileRecieved">Ontvangen</paper-tab>
+                <paper-tab on-tap="smileSent">Verzonden</paper-tab>
+                <paper-tab on-tap="smileLock">icon switch</paper-tab>
+            </paper-tabs>
+       </div>
+    </template>
+    <script>
+    Polymer({
+      is:'smile-chat-list-filter',
+              properties:{
+                selected:{
+                type:Number, 
+                value:0
+            }
+        },
+        smileRecieved(){
+            this.selected = 0;
+        },
+        smileSent(){
+            this.selected = 1;
+        },
+        smileLock(){
+            this.selected = 2;
+        },
+    })
+    </script>
+</dom-module>

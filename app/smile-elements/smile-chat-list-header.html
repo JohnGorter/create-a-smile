@@ -1,19 +1,58 @@
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
+    <link rel="import" href="../../paper-styles/demo-pages.html">
+    <link rel="import" href="../paper-header-panel.html">
 
-<!-- copy paste als je een nieuw element gaat bouwen !-->
-
-<dom-module id="smile-chat-list-header">
-    <style include="/smile_theme.html"></style>
+    <dom-module id="smile-chat-list-header">
     <template>
+    <custom-style>
+      <style is="custom-style">
+        body {
+          @apply --layout-inline;
+          @apply --layout-center-center;
+          @apply --layout-wrap;
+          padding: 40px;
+        }
 
-        <style>
+        paper-header-panel {
+          float: left;
+          width: 100%;
+          height: 100%;
+          @apply --shadow-elevation-2dp;
+        }
 
-        </style>
-        <div>
-    <paper-header-panel mode="waterfall">
-      <div slot="header">waterfall</div>
-      <div class="content">HALLO</div>
+        [slot=header] {
+          height: 100px;
+          width: 100%;
+          font-size: 16px;
+          line-height: 60px;
+          padding: 0 10px;
+          color: var(--text-primary-color);
+          transition: height 1.0s;
+        }
+
+        [slot=header].tall {
+          height: 35%;
+        }
+
+        [slot=header].medium-tall {
+          height: 100px;
+          line-height: 50px;
+        }
+
+        .dark-primary [slot=header] {
+          background-color: var(--dark-primary-color);
+        }
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <paper-header-panel mode="waterfall-tall" class="dark-primary">
+      <div slot="header"></div>
+      <smile-chat-list-filter></smile-chat-list-filter>
+      <div class="content"><smile-chat-list></smile-chat-list></div>
     </paper-header-panel>
-        </div>
+  </body>
     </template>
     <script>
     Polymer({

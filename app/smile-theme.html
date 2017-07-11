@@ -14,7 +14,7 @@
         --primary-text-color:       #212121;
         --secondary-text-color:     #757575;
         --disabled-text-color:      #BDBDBD;
-        --divider-color:            #BDBDBD;
+        --divider-color:            #f5f5f5;
         --highlight-color:          #e72669;
         --positive-highlight:       #95c11e;
         font-family: 'Roboto', sans-serif;
@@ -46,13 +46,18 @@
 
       iron-swipeable-pages { background-color:var(--accent-color);}
     
-      .smile-button {
+      .smile-menu-button {
           background: var(--highlight-color);
-          height: 120px;
-          width: 120px;
-          top:-30px;
-          border-radius: 50%;
-          border: 3px solid white;
+          height: 80px;
+          width: 80px;
+          top:-20px;
+          padding-top:20px;
+          border-radius:50%;
+          border: 2px solid white;
+      }
+      iron-icon{
+          --iron-icon-height: 50px;
+          --iron-icon-width: 50px;
       }
 
   

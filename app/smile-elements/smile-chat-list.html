@@ -113,6 +113,7 @@
 
 
         </style>
+        
         <div>
             <template is="dom-repeat" items="[[items]]">
                 <swipe-action class="list-item" on-swiped-away="onSwipedAway" on-swipe-canceled="onSwipeCanceled">
@@ -140,6 +141,7 @@
                     </div>
                 </swipe-action>
             </template>
+    
         </div>
 </template>
 <script>
@@ -170,7 +172,6 @@
                     { name:'john', message:'Wie ben jij?', activity:'21:34', messagecount:'1', picture:'http://metronieuws.tcdn.nl/field/image/inline/944d74a694a8e7b25f4da0b66f630f12-1472563694.jpg'},
                     { name:'jeroen', message:'Hoe gaat het?', activity:'10:35', messagecount:'5', picture:'http://metronieuws.tcdn.nl/field/image/inline/944d74a694a8e7b25f4da0b66f630f12-1472563694.jpg'},
                     { name:'arjan', message:'Ben je er nog???', activity:'01-17', messagecount:'6', picture:'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAAzAAAAJDgwYjQ1ZWQ3LTc0ZmEtNDAwMi04ODFjLWRhMjdkMWMzOThkMg.jpg'}
-
                 ]
             }
         },
@@ -178,8 +179,5 @@
             return this.items.indexOf(a) % 2 == 1 ? "second-item" : "first-item";
         }   
     })
-
-    
-</script>
 </script>
 </dom-module>

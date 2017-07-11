@@ -21,13 +21,14 @@
                 <main-page></main-page>
                 <profile-page></profile-page>
 </iron-swipeable-pages>
+<smile-popup-selector></smile-popup-selector>
 
           
             
             <paper-toolbar>
                 <paper-icon-button icon="smile:chat-bubble-outline" on-tap="gotoSocial"></paper-icon-button>
                 <div class="flex horizontal layout center-justified">
-                    <paper-fab hidden$="{{isMainpage(selected)}}" class="smile-button" icon="smile:smile" on-tap="gotoMainpage"></paper-fab>
+                    <paper-icon-button label hidden$="{{isMainpage(selected)}}" class="smile-menu-button" icon="smile:smile" on-tap="gotoMainpage"></paper-icon-button>
                 </div>
                 <paper-icon-button icon="smile:face" on-tap="gotoProfile"></paper-icon-button>
             </paper-toolbar>

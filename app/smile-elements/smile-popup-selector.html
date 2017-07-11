@@ -1,0 +1,71 @@
+<link rel="import" href="/bower_components/neon-animation/animations/scale-up-animation.html">
+<link rel="import" href="/bower_components/neon-animation/animations/fade-out-animation.html">
+<link rel="import" href="/bower_components/paper-elements/paper-dialog/paper-dialog.html">
+
+<dom-module id="smile-popup-selector">
+    <template>
+        <style>
+
+          paper-dialog {
+              width: 110%;
+              height: 70%;
+              background: var(--divider-color);
+          }
+            paper-input{
+                --paper-input-container-color:  var(--primary-text-color);
+                --paper-input-container-focus-color: var(--highlight-color);
+                --paper-input-container-input-color: var(--primary-text-color);
+            }
+
+            paper-input iron-icon{
+                --iron-icon-fill-color: var(--primary-text-color);
+            }
+            .avatar {
+                border-radius: 50%;
+                height:50px;
+                width: 50px;
+                position:relative;
+        }
+            .person {
+                display:inline-block;
+                padding: 6px;
+                margin:auto;
+        }
+            .name{
+                text-align: center;
+                padding-top: 3px;
+        }
+        </style>
+<div>
+    <paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+        <paper-input label="Wie wil je blij maken?">
+            <iron-icon prefix icon="search"></iron-icon>
+        </paper-input>
+        <template is="dom-repeat" items="[[items]]">
+            <div class="person">
+            <div><img class="avatar" src="[[item.picture]]" /></div>
+            <div class="name">[[item.name]]</div>
+            </paper-item>
+            </div>
+            </div>
+        </template>
+    </paper-dialog>
+</div>
+</template>
+<script>
+    Polymer({
+        is: 'smile-popup-selector',
+        properties: {
+            items: {
+                type: Array,
+                value: [
+                    { name: 'john', picture: 'http://metronieuws.tcdn.nl/field/image/inline/944d74a694a8e7b25f4da0b66f630f12-1472563694.jpg' },
+                    { name: 'jeroen', picture: 'http://metronieuws.tcdn.nl/field/image/inline/944d74a694a8e7b25f4da0b66f630f12-1472563694.jpg' },
+                    { name: 'arjan', picture: 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAAzAAAAJDgwYjQ1ZWQ3LTc0ZmEtNDAwMi04ODFjLWRhMjdkMWMzOThkMg.jpg' },
+                    { name: 'john', picture: 'http://metronieuws.tcdn.nl/field/image/inline/944d74a694a8e7b25f4da0b66f630f12-1472563694.jpg' }
+                ]
+            }
+        },
+    })
+</script>
+</dom-module>

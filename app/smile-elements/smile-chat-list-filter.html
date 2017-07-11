@@ -6,7 +6,6 @@
         .container {
             min-height: 50px;
         }
-
         paper-tab {
             --paper-tab-ink: var(--highlight-color);
             --paper-tab: var(--dark-primary-color);
@@ -16,15 +15,17 @@
             --paper-tabs-selection-bar-color: var(--highlight-color);
             background: var(--dark-primary-color);
         }
+        
         </style>
+
         <div class="container">
             <paper-tabs selected="{{selected}}" autoselect autoselect-delay="1000">
                 <paper-tab on-tap="smileRecieved">Ontvangen</paper-tab>
                 <paper-tab on-tap="smileSent">Verzonden</paper-tab>
-                <paper-tab on-tap="smileLock">icon switch</paper-tab>
-            </paper-tabs>
+                <paper-tab on-tap="smileLock"><paper-icon-button icon="lock"></paper-icon-button></paper-tab>
        </div>
     </template>
+
     <script>
     Polymer({
       is:'smile-chat-list-filter',
